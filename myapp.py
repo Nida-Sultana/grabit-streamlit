@@ -165,20 +165,7 @@ elif role == "Canteen Manager":
                     st.markdown("---")
 
         # --- INVENTORY ---
-        with tab_inventory:
-            st.write("### Catalog Management & Stock Configuration")
-            c1, c2, c3 = st.columns(3)
-            with c1:
-                new_name = st.text_input("Name", key="inv_add_name")
-            with c2:
-                new_price = st.number_input("Price (₹)", min_value=1, value=10, key="inv_add_price")
-            with c3:
-                new_cat = st.selectbox("Category", ["Stationary", "Food"], key="inv_add_cat")
-            if st.button("➕ Push to Live Catalog"):
-                if new_name.strip() != "":
-                    global_state["canteen_menu"][new_name.strip()] = {"price": new_price, "available": True, "category": new_cat}
-                    st.success(f"Added {new_name} to the dashboard catalog.")
-                    st.rerun()
+        
 
         # --- INVENTORY ---
         with tab_inventory:
